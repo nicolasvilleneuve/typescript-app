@@ -1,18 +1,16 @@
 /// <reference types="@types/google.maps" />
 import {User} from "./User";
 import {Company} from "./Company";
+import {CustomMap} from "./Map";
 
-// const nic = new User();
-// console.log(nic);
-//
-// const company = new Company();
-// console.log(company);
+const nic = new User('nic');
+console.log(nic);
 
+const company = new Company('dynatrace');
+console.log(company);
 
-new google.maps.Map(document.getElementById('map') as HTMLElement, {
-    zoom: 1,
-    center: {
-        lat: -34.397, lng: 150.644
-    }
-});
+const customMap = new CustomMap('map');
+customMap.addMarker(nic);
+customMap.addMarker(company);
+
 
